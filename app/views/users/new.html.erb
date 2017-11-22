@@ -1,1 +1,26 @@
-<p>This will be Tweeter's sign up page!</p>
+<p>
+	<p>
+		<%= render 'shared/error_messages' %>
+	</p>
+	<%= form_for(@user, url: signup_path) do |f| %>
+		<%= f.label :name %>
+		<p>
+			<%= f.text_field :name %>
+		</p>
+		<%= f.label :email %>
+		<p>
+			<%= f.email_field :email %>
+		</p>
+		<%= f.label :password %>
+		<p>
+			<%= f.password_field :password %>
+		</p>
+		<%= f.label :password_confirmation, "Password Confirmation" %>
+		<p>
+			<%= f.password_field :password_confirmation %>
+		</p>
+		<p>
+			<%= f.submit "Create my account" %>
+		</p>
+	<% end %>
+</p>
