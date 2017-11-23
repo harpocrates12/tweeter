@@ -1,16 +1,27 @@
 <div id="header">
 	<h1>TweeterApp</h1>
 	<hr>
-	<button>
-		<%= link_to "Sign up", signup_path, id: "buttons"%>
-	</button>
+	<% if !logged_in? %>
+		<button>
+			<%= link_to "Sign up", signup_path, id: "buttons"%>
+		</button>
+	<% end %>
 	<button>
 		<%= link_to "Home", root_path, id: "buttons" %>
 	</button>
-	<button>
-		<%= link_to "About", about_path, id: "buttons" %>
-	</button>
+<!-- 	<button>
+		<%# link_to "About", about_path, id: "buttons" %>
+	</button> -->
 	<button>
 		<%= link_to "Help", help_path, id: "buttons" %>
 	</button>
+	<% if logged_in? %>
+		<button><%= link_to "Profile", current_user, id: "buttons" %></button>
+		<button><%= link_to "Logout", logout_path, id: "buttons", method: "delete" %></button>
+	<% else %>
+		<button>
+			<%= link_to "Log in", login_path, id: "buttons" %>
+		</button>
+	<% end %>
 </div>
+<br>
