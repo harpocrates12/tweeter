@@ -9,6 +9,11 @@
 		<p>
 			<%= f.password_field :password %>
 		</p>
+		<%= f.label :remember_me %>
+		<p>
+			<%= f.check_box :remember_me %>
+			<!-- <span>Remember me on this computer</span> -->
+		</p>
 		<p>
 			<%= f.submit "Login" %>
 		</p>
